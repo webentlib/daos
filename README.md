@@ -266,7 +266,7 @@ Assumes, that 'daos' module will be installed in root dir.
 | Документация: Список                | http://127.0.0.1:8000/admin/doc/models/                |                                              
 | Документация: Детальная страница    | http://127.0.0.1:8000/admin/doc/models/admin.logentry/ |                                                             
 
-### And this blocks
+### And this blocks:
 - Левая панель
 - Хлебные крошки
 - Вёрстка
