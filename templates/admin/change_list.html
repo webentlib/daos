@@ -9,9 +9,13 @@
 
         {% if action_form and actions_on_top and cl.show_admin_actions %}{% admin_actions %}{% endif %}
 
-        <ul class="ObjectTools object-tools">
-            {% change_list_object_tools %}
-        </ul>
+        {% block object-tools-daos %}
+            <ul class="ObjectTools object-tools">
+              {% block object-tools-items %}
+                {% change_list_object_tools %}
+              {% endblock %}
+            </ul>
+        {% endblock %}
     </div>
 {% endblock %}
 
