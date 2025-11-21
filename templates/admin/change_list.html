@@ -11,9 +11,11 @@
 
         {% block object-tools-daos %}
             <ul class="ObjectTools object-tools">
+              {% block object-tools-before %}{% endblock %}
               {% block object-tools-items %}
                 {% change_list_object_tools %}
               {% endblock %}
+              {% block object-tools-after %}{% endblock %}
             </ul>
         {% endblock %}
     </div>
