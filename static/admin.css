@@ -236,6 +236,7 @@ ul.messagelist {position:sticky;left:0;width:calc(100vw - var(--filter-width) - 
     .Search {margin-right:12px;}
     .Actions {width:auto !important;padding:0 !important;}
     .ObjectTools {margin:0 0 0 auto !important;padding:0 !important;float:none;min-height:26px;}
+        .ObjectTools li {height:auto;padding:0;}
 
     .PanelButton, .PanelInput, .PanelSelect {
         border:1px solid var(--border-color);background:var(--body-bg);min-height:26px;min-width:26px;
@@ -289,12 +290,20 @@ body.NavSidebarOpened #nav-sidebar {display:block;}
 
 html:not([data-theme="dark"]) #content-related {--darkened-bg:#fff;}
 
-/* Lib */
+/* LIB */
+
+/* TableSummary */
 
 .TableSummary {display:table;--padding:2px;}
     .TableSummary > * {display:table-row;}
         .TableSummary > * > * {display:table-cell;padding:var(--padding);}
         .TableSummary > * > *:first-child {font-weight:500;padding-left:0;}
+
+/* Tab */
+
+.Tabs {border:1px solid var(--object-tools-bg);}
+    .Tab {padding:2px 11px !important;color:var(--object-tools-bg) !important;background:#fff !important;}
+    .Tab._Current {}
 
 @media (max-width:1024px) {
     #content {padding:0 !important;}
