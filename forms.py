@@ -34,17 +34,20 @@ class DaosAuthenticationForm(AuthenticationForm):
     """
 
     def get_invalid_login_error(self):
-        username = self.cleaned_data.get('username')
-        user = User.objects.filter(username=username).first()
+        email = self.cleaned_data.get('username')
+        user = User.objects.filter(email=email).first()
         if user:
             user.failed_login_attempts += 1
             user.last_failed_login_attempt_at = timezone.now()
-            user.save()
+            user.save(update_fields=['failed_login_attempts', 'last_failed_login_attempt_at'])
         return super().get_invalid_login_error()
 
     def confirm_login_allowed(self, user):
         self._check_failed_login_attempts(user)
-        return super().confirm_login_allowed(user)
+        super().confirm_login_allowed(user)
+
+        user.failed_login_attempts = 0
+        user.save(update_fields=['failed_login_attempts'])
 
     @staticmethod
     def _check_failed_login_attempts(user):
